@@ -1,0 +1,15 @@
+[Unit]
+Description=Fan Control
+After=syslog.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/alarm
+ExecStart=/opt/bin/fan_control.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
